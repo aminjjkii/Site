@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: 244 246 251;
+  --c-surface: 255 255 255;
+  --c-ink: 15 27 61;
+  --c-muted: 91 102 130;
+  --c-line: 219 226 239;
+  --c-brand: 29 78 216;
+  --c-brand-ink: 255 255 255;
+  --c-accent: 245 158 11;
+  --c-danger: 185 28 28;
+  --c-success: 21 128 61;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-bg font-sans text-ink antialiased;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+a:focus-visible {
+  @apply rounded outline outline-2 outline-offset-2 outline-brand;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
